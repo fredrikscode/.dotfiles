@@ -9,7 +9,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      theme = "sleek-grub-theme";
+      theme = "nixos-grub2-theme";
     };
   };
 }
