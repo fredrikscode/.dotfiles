@@ -4,8 +4,8 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./boot.nix
-      ./gpu.nix
+      ./system/boot.nix
+      ./system/gpu.nix
     ];
 
   networking.hostName = systemSettings.hostname;
