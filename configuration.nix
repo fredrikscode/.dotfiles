@@ -57,8 +57,8 @@
 
   programs.zsh.enable = true;
 
-  environment.systemPackages = [
-    pkgs.nixos-grub2-theme
+  environment.systemPackages = with pkgs; [
+    nixos-grub2-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
