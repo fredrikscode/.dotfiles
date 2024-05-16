@@ -7,8 +7,6 @@
       ./gpu.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -83,6 +81,21 @@
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
+
+  nix = {
+    settings = {
+      # Enable flakes
+      experimental-features = [ "nix-command" "flakes" ];
+      # Garbage collection
+      auto-optimise-store = true;
+    };
+    # Garbage collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
