@@ -55,12 +55,6 @@
     ];
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      sleek-grub-theme
-    ];
-  };
-
   programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
