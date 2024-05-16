@@ -57,6 +57,10 @@
 
   programs.zsh.enable = true;
 
+  environment.systemPackages = [
+    pkgs.nixos-grub2-theme
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
