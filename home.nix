@@ -30,6 +30,7 @@
     userEmail = "fredrik@kihlstedt.io";
     extraConfig = {
       init.defaultBranch = "main";
+      core.editor = "nvim";
       # To avoid git freaking out over dubious permissions
       safe.directory = "/home/${userSettings.username}/.dotfiles";
     };
