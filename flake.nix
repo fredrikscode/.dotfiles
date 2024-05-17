@@ -2,13 +2,18 @@
 
   inputs = {
   
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs = {
+      url = "nixpkgs/nixos-unstable";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   
   };
 
   outputs = { self, nixpkgs, home-manager, ... }:
+
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -42,4 +47,5 @@
 	      };
       };
     };
+    
 }
