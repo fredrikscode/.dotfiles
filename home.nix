@@ -4,7 +4,6 @@
 
   imports = [
     ./system/sh.nix
-    ./apps/git/git.nix
   ];
    
   home.username = userSettings.username;
@@ -15,6 +14,17 @@
   ];
 
   home.file = {
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "fredrikscode";
+    userEmail = "fredrik@kihlstedt.io";
+    extraConfig = {
+      init.defaultBranch = "main";
+      # To avoid git freaking out over dubious permissions
+      safe.directory = "/home/${userSettings.username}/.dotfiles";
+    };
   };
 
   # Home Manager can also manage your environment variables through
