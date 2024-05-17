@@ -64,7 +64,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Sway dependency
-  security.polkit.enable = true;
+  #security.polkit.enable = true;
 
   # Brightness/volume functions keys (primarily for laptops)
   programs.light.enable = true;

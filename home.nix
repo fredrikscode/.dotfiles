@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./user/sway/default.nix
+    #./user/sway/default.nix
     ./system/sh.nix
     ./apps/vscode/default.nix
   ];
@@ -20,10 +20,10 @@
 
   home.packages = with pkgs; [
     # Sway dependencies
-    wl-clipboard
-    mako
-    wofi
-    waybar
+    # wl-clipboard
+    # mako
+    # wofi
+    # waybar
     # ---
     wezterm
     neovim
