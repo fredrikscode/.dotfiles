@@ -13,29 +13,6 @@
     neovim
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    history.size = 10000;
-
-    shellAliases = {
-      ".." = "cd ..";
-      c = "clear -x";
-      ll = "ls -lah";
-      reb = "sudo nixos-rebuild switch --flake .#nixed";
-      hom = "home-manager switch --flake .#${userSettings.username}";
-      s = "nix --extra-experimental-features nix-command flake search nixpkgs";
-      v = "nvim";
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "wezm";
-    };
-  };
-
   programs.git = {
     enable = true;
     userName = "fredrikscode";
