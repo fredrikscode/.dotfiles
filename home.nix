@@ -4,6 +4,7 @@
 
   imports = [
     ./system/sh.nix
+    ./apps/git/git.nix
   ];
    
   home.username = userSettings.username;
