@@ -16,6 +16,11 @@
         # command = "waybar"; You can change it if you want
         position = "bottom";
       }];
+      output = {
+        "Virtual-1" = {
+          mode = "3840x1600@60Hz";
+        };
+      };
     };
   };
 
