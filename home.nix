@@ -18,6 +18,12 @@
   home.homeDirectory = "/home/"+userSettings.username;
 
   home.packages = with pkgs; [
+    # Sway dependencies
+    wl-clipboard
+    mako
+    wofi
+    waybar
+    # ---
     neovim
   ];
 
