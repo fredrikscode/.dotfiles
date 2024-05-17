@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./user/sway/default.nix
     ./system/sh.nix
     ./apps/vscode/default.nix
   ];
