@@ -7,7 +7,7 @@
     wrapperFeatures.gtk = true;
     # Sway-specific Configuration
     config = rec {
-      modifier = "Mod4";
+      modifier = "Shift";
       terminal = "wezterm";
       menu = "wofi --show run";
       # Status bar(s)
