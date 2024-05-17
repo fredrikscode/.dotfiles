@@ -6,10 +6,8 @@
       ./hardware-configuration.nix
       ./system/boot.nix
       ./system/gpu.nix
+      ./system/network.nix
     ];
-
-  networking.hostName = systemSettings.hostname;
-  networking.networkmanager.enable = true;
 
   time.timeZone = systemSettings.timezone;
 
