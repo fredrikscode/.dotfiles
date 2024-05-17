@@ -5,8 +5,9 @@ let
     ".." = "cd ..";
     c = "clear -x";
     ll = "ls -lah";
-    reb = "sudo nixos-rebuild switch --flake .#nixed";
-    hom = "home-manager switch --flake .#${userSettings.username}";
+    rebuild = "sudo nixos-rebuild switch --flake .#nixed";
+    manswitch = "home-manager switch --flake .#${userSettings.username}";
+    "flake up" = "nix flake update /home/${userSettings.username}/.dotfiles";
     s = "nix search nixpkgs";
     v = "nvim";
   };
