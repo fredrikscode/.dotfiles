@@ -1,6 +1,15 @@
 { config, libs, pkgs, userSettings, ... }:
 
+let
+  importModules = dir: builtins.filter (file: builtins.match ".+\\.nix$" file != null) (builtins.attrNames (builtins.readDir dir));
+  appsModules = importModules ./apps;
+in
+
 {
+
+  imports = [
+
+  ] ++ (map (app: ./apps + "/" + app) appsModules);
 
   gtk.enable = true;
    
