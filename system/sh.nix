@@ -14,6 +14,13 @@ in
 
 {
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    historyFileSize = 10000;
+    shellAliases = myAliases;
+  }
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
