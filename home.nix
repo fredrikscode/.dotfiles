@@ -2,7 +2,9 @@
 
 {
 
-  gtk.enable = true;
+  imports = [
+    ./system/sh.nix
+  ];
    
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
