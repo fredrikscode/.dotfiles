@@ -8,7 +8,7 @@
       equinusocio.vsc-material-theme
       pkief.material-icon-theme
       ms-vscode-remote.remote-ssh
-      vscode-extensions.ms-python.python
+      ms-python.python
     ];
   };
 
