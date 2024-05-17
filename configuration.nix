@@ -29,7 +29,7 @@
   # services.xserver.enable = true;
 
   environment.variables = {
-    XDG_CONFIG_HOME = "${pkgs.stdenv.lib.getHomeDir}/.dotfiles";
+    XDG_CONFIG_HOME = "${builtins.getEnv "HOME"}/.dotfiles";
   };
   
 
