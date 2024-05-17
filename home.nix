@@ -6,6 +6,13 @@
     ./system/sh.nix
     ./apps/vscode/default.nix
   ];
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
    
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;

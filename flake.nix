@@ -4,8 +4,6 @@
   
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
-      config.allowUnfree = true;
-      config.allowUnfreePredicate = (_: true);
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
