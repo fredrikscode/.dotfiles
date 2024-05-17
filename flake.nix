@@ -12,8 +12,8 @@
     let
       systemSettings = {
         system = "x86_64-linux";
-	hostname = "nixed";
-	timezone = "Europe/Stockholm";
+        hostname = "nixed";
+        timezone = "Europe/Stockholm";
       };
 
       userSettings = {
@@ -25,21 +25,21 @@
     in {
       nixosConfigurations = {
         nixed = lib.nixosSystem {
-	  inherit (systemSettings) system;
-	  specialArgs = {
-	    inherit systemSettings userSettings;
-	  };
-	  modules = [ ./configuration.nix ];
+          inherit (systemSettings) system;
+          specialArgs = {
+            inherit systemSettings userSettings;
+          };
+          modules = [ ./configuration.nix ];
         };
       };
       homeConfigurations = {
         fredrik = home-manager.lib.homeManagerConfiguration {
-	  inherit pkgs;
-	  extraSpecialArgs = {
-	    inherit userSettings;
-	  };
-	  modules = [ ./home.nix ];
-	};
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit userSettings;
+          };
+	        modules = [ ./home.nix ];
+	      };
       };
     };
 }
