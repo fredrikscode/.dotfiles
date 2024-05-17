@@ -7,7 +7,7 @@ let
     ll = "ls -lah";
     reb = "sudo nixos-rebuild switch --flake .#nixed";
     hom = "home-manager switch --flake .#${userSettings.username}";
-    s = "nix --extra-experimental-features \"nix-command flakes\" search nixpkgs";
+    s = "nix search nixpkgs";
     v = "nvim";
   };
 in
