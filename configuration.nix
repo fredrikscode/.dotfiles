@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./system/boot.nix
+      ./system/xdg.nix
       ./system/gpu.nix
       ./system/network.nix
     ];
