@@ -19,7 +19,7 @@ in
     enableCompletion = true;
     historyFileSize = 10000;
     shellAliases = myAliases;
-  }
+  };
 
   programs.zsh = {
     enable = true;
