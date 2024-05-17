@@ -49,7 +49,7 @@
   users.users.${userSettings.username} = {
     description = "Fredrik";
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "video" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
@@ -58,6 +58,12 @@
   programs.zsh.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  # Sway dependency
+  security.polkit.enable = true;
+
+  # Brightness/volume functions keys (primarily for laptops)
+  programs.light.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
