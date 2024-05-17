@@ -28,7 +28,9 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
+  environment.variables = {
+    XDG_CONFIG_HOME = "${pkgs.stdenv.lib.getHomeDir}/.dotfiles";
+  };
   
 
   # Configure keymap in X11
