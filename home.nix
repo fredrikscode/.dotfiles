@@ -4,6 +4,7 @@
 
   imports = [
     ./system/sh.nix
+    ./apps/vscode/default.nix
   ];
    
   home.username = userSettings.username;
