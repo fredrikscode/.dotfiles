@@ -10,6 +10,7 @@ let
     s = "nix --extra-experimental-features nix-command flake search nixpkgs";
     v = "nvim";
   };
+in
 
 {
 
