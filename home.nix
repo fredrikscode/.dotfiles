@@ -25,6 +25,7 @@
     wofi
     waybar
     # ---
+    wezterm
     neovim
   ];
 
