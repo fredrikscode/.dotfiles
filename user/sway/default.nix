@@ -15,13 +15,6 @@
         # command = "waybar"; You can change it if you want
         position = "bottom";
       }];
-      # Display device configuration
-      output = {
-        eDP-1 = {
-          # Set HIDP scale (pixel integer scaling)
-          scale = "1";
-        };
-      };
     };
   };
 
