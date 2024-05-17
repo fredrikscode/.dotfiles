@@ -7,7 +7,7 @@ let
     ll = "ls -lah";
     rebuild = "sudo nixos-rebuild switch --flake .#nixed";
     manswitch = "home-manager switch --flake .#${userSettings.username}";
-    "flake up" = "nix flake update /home/${userSettings.username}/.dotfiles";
+    fup = "nix flake update /home/${userSettings.username}/.dotfiles";
     s = "nix search nixpkgs";
     v = "nvim";
   };
