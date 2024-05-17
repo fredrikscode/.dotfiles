@@ -4,10 +4,15 @@
   
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
+<<<<<<< HEAD
       config = {
         allowUnfree = true;
         allowUnfreePredicate = (_: true);
       };
+=======
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+>>>>>>> 63361dd (allowUnfree test)
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
