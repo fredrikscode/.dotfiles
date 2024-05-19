@@ -14,6 +14,10 @@
       allowUnfreePredicate = (_: true);
     };
   };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
    
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
