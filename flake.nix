@@ -33,7 +33,7 @@
         nixed = lib.nixosSystem {
           inherit (systemSettings) system;
           specialArgs = {
-            inherit systemSettings userSettings;
+            inherit systemSettings userSettings inputs;
           };
           modules = [ ./configuration.nix ];
         };
