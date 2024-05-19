@@ -45,6 +45,7 @@
           inherit pkgs;
           extraSpecialArgs = {
             inherit userSettings;
+            inputs = self.inputs;  # Pass inputs from self
           };
           modules = [ ./home.nix ];
         };
