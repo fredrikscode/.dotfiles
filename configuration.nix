@@ -11,6 +11,9 @@
 
   time.timeZone = systemSettings.timezone;
 
+  # Enable hyprland
+  programs.hyprland.enable = true;
+
     # Enable Gnome and GDM
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
