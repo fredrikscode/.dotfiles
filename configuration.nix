@@ -17,6 +17,10 @@
   # X11
   services.xserver.enable = true;
 
+  # Hyprland
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+
   # Fix electron apps in Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
