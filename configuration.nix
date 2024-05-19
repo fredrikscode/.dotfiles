@@ -18,7 +18,10 @@
   };
 
   # SDDM
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
+
+  # X11
+  services.xserver.enable = true;
 
   # X11
   services.xserver.enable = true;
