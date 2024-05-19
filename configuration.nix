@@ -15,7 +15,7 @@
   services.displayManager.sddm.enable = true;
 
   # X11
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
 
   # Hyprland
   programs.hyprland.enable = true;
