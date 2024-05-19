@@ -1,7 +1,5 @@
 {
-
   inputs = {
-  
     nixpkgs = {
       url = "nixpkgs/nixos-unstable";
     };
@@ -10,10 +8,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-  
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }:
 
     let
       systemSettings = {
@@ -33,7 +30,8 @@
         nixed = lib.nixosSystem {
           inherit (systemSettings) system;
           specialArgs = {
-            inherit systemSettings userSettings inputs;
+            inherit systemSettings userSettings pkgs;
+            inputs = self.inputs;  # Pass inputs from self
           };
           modules = [ ./configuration.nix ];
         };
@@ -44,9 +42,8 @@
           extraSpecialArgs = {
             inherit userSettings;
           };
-	        modules = [ ./home.nix ];
-	      };
+          modules = [ ./home.nix ];
+        };
       };
     };
-
 }
