@@ -11,7 +11,6 @@
 
   nix = {
     settings = {
-      # Enable flakes
       experimental-features = [ "nix-command" "flakes" ];
       # Garbage collection
       auto-optimise-store = true;
@@ -73,7 +72,7 @@
   users.users.${userSettings.username} = {
     description = "Fredrik";
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "video" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
