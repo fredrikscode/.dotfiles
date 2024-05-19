@@ -11,17 +11,14 @@
 
   time.timeZone = systemSettings.timezone;
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   # SDDM
   services.displayManager.sddm.enable = true;
 
   # X11
   services.xserver.enable = true;
+
+  # Fix electron apps in Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     # Enable Gnome and GDM
   # services.xserver.displayManager.gdm.enable = true;
