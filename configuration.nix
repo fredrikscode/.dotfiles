@@ -13,6 +13,7 @@
 
   # SDDM
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   # X11
   #services.xserver.enable = true;
