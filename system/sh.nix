@@ -10,7 +10,6 @@ let
     fup = "nix flake update /home/${userSettings.username}/.dotfiles";
     s = "nix search nixpkgs";
     v = "nvim";
-    getkeys = "git clone git@git.freddan.io:fredrik/sshkeys.git /tmp/sshkeys; cp -r /tmp/sshkeys/* /home/${userSettings.username}/.ssh/; rm -rf /tmp/sshkeys";
   };
 in
 
