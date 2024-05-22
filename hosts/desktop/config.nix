@@ -4,9 +4,9 @@
   imports =
     [
       ./hardware.nix
-      ../system/boot.nix
-      ../system/gpu.nix
-      ../system/network.nix
+      ../../system/boot.nix
+      ../../system/gpu.nix
+      ../../system/network.nix
     ];
 
   nix = {
