@@ -60,7 +60,7 @@
     };
   };
 
-  time.timeZone = timezone;
+  time.timeZone = "Europe/Stockholm";
   
   users.users.${username} = {
     description = "Fredrik";
