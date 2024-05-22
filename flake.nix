@@ -21,7 +21,7 @@
       };
 
       pkgs = import nixpkgs {
-        inherit system;
+        inherit systemSettings.system;
         config = {
           allowUnfree = true;
         };
@@ -31,9 +31,9 @@
       nixosConfigurations = {
         "${host}" = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit system;
+            inherit systemSettings.system;
             inherit inputs;
-            inherit username;
+            inherit userSettings.username;
             inherit host;
           };
           modules = [ 
@@ -41,14 +41,14 @@
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
-                inherit username;
+                inherit userSettings.username;
                 inherit inputs;
                 inherit host;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./hosts/${host}/home.nix;
+              home-manager.users.${userSettings.username} = import ./hosts/${host}/home.nix;
             }
           ];
         };
