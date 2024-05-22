@@ -9,7 +9,7 @@
     inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      host = "nixed";
+      host = "desktop";
       timezone = "Europe/Stockholm";
       username = "fredrik";
       gitUsername = "Fredrik Kihlstedt";
