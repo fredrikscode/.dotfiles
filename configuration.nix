@@ -51,6 +51,9 @@
   };
 
   programs = {
+    hyprland = {
+      enable = true;
+    };
     # Enable laptop brightness keys
     light = {
       enable = true;
