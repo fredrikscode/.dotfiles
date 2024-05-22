@@ -1,4 +1,4 @@
-{ config, libs, inputs, pkgs, username, gitUsername, gitEmail ... }:
+{ config, libs, inputs, pkgs, username, gitUsername, gitEmail, ... }:
 
 {
 
