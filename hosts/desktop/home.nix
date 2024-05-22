@@ -3,19 +3,13 @@
 {
 
   imports = [
-    ./system/sh.nix
-    ./apps/vscode/default.nix
+    ../system/sh.nix
+    ../apps/vscode/default.nix
   ];
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
-  };
    
   home.username = userSettings.username;
   home.homeDirectory = "/home/"+userSettings.username;
+  home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
     wezterm
@@ -31,8 +25,8 @@
     };
     git = {
       enable = true;
-      userName = "fredrikscode";
-      userEmail = "fredrik@kihlstedt.io";
+      userName = userSettings.gitUsername;
+      userEmail = userSettings.gitEmail;
       extraConfig = {
         init.defaultBranch = "main";
         core.editor = "nvim";
@@ -48,7 +42,5 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-
-  home.stateVersion = "23.11";
 
 }
