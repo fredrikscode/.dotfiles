@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, systemSettings, userSettings, ... }:
+{ config, lib, inputs, pkgs, timezone, username, ... }:
 
 {
   imports =
@@ -60,9 +60,9 @@
     };
   };
 
-  time.timeZone = systemSettings.timezone;
+  time.timeZone = timezone;
   
-  users.users.${userSettings.username} = {
+  users.users.${username} = {
     description = "Fredrik";
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "libvirtd" "video" ];

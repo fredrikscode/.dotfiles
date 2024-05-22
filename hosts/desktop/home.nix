@@ -1,4 +1,4 @@
-{ config, libs, inputs, pkgs, userSettings, ... }:
+{ config, libs, inputs, pkgs, username, gitUsername, gitEmail ... }:
 
 {
 
@@ -7,8 +7,8 @@
     ../apps/vscode/default.nix
   ];
    
-  home.username = userSettings.username;
-  home.homeDirectory = "/home/"+userSettings.username;
+  home.username = username;
+  home.homeDirectory = "/home/"+username;
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
@@ -25,13 +25,13 @@
     };
     git = {
       enable = true;
-      userName = userSettings.gitUsername;
-      userEmail = userSettings.gitEmail;
+      userName = gitUsername;
+      userEmail = gitEmail;
       extraConfig = {
         init.defaultBranch = "main";
         core.editor = "nvim";
         # To avoid git freaking out over dubious permissions
-        safe.directory = "/home/${userSettings.username}/.dotfiles";
+        safe.directory = "/home/${username}/.dotfiles";
       };
     };
   };

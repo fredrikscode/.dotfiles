@@ -8,20 +8,15 @@
   outputs = 
     inputs@{ nixpkgs, home-manager, ... }:
     let
-      systemSettings = {
-        system = "x86_64-linux";
-        hostname = "nixed";
-        timezone = "Europe/Stockholm";
-      };
-
-      userSettings = {
-        username = "fredrik";
-        gitUsername = "Fredrik Kihlstedt";
-        gitEmail = "fredrik@kihlstedt.io";
-      };
+      system = "x86_64-linux";
+      hostname = "nixed";
+      timezone = "Europe/Stockholm";
+      username = "fredrik";
+      gitUsername = "Fredrik Kihlstedt";
+      gitEmail = "fredrik@kihlstedt.io";
 
       pkgs = import nixpkgs {
-        inherit systemSettings.system;
+        inherit system;
         config = {
           allowUnfree = true;
         };
@@ -31,9 +26,9 @@
       nixosConfigurations = {
         "${host}" = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit systemSettings.system;
+            inherit system;
             inherit inputs;
-            inherit userSettings.username;
+            inherit username;
             inherit host;
           };
           modules = [ 
@@ -41,14 +36,14 @@
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
-                inherit userSettings.username;
+                inherit username;
                 inherit inputs;
                 inherit host;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${userSettings.username} = import ./hosts/${host}/home.nix;
+              home-manager.users.${username} = import ./hosts/${host}/home.nix;
             }
           ];
         };
