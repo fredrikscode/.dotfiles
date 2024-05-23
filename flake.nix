@@ -12,7 +12,7 @@
       host = "desktop";
       timezone = "Europe/Stockholm";
       username = "fredrik";
-      gitUsername = "Fredrik Kihlstedt";
+      gitUsername = "fredrikscode";
       gitEmail = "fredrik@kihlstedt.io";
 
       pkgs = import nixpkgs {
