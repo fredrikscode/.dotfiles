@@ -97,7 +97,6 @@ in
       };
     };
     bash = {
-      enable = true;
       enableCompletion = true;
       shellAliases = myAliases;
     };
