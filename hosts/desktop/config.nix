@@ -1,12 +1,12 @@
-{ config, lib, inputs, pkgs, timezone, username, ... }:
+{ config, lib, inputs, pkgs, timezone, username, host, ... }:
 let
   myAliases = {
     ".." = "cd ..";
     c = "clear -x";
     ll = "ls -lah";
-    rebuild = "sudo nixos-rebuild switch --flake .#nixed";
-    manswitch = "home-manager switch --flake .#${userSettings.username}";
-    fup = "nix flake update /home/${userSettings.username}/.dotfiles";
+    rebuild = "sudo nixos-rebuild switch --flake .#${host}";
+    manswitch = "home-manager switch --flake .#${username}";
+    fup = "nix flake update /home/${username}/.dotfiles";
     s = "nix search nixpkgs";
     v = "nvim";
   };
