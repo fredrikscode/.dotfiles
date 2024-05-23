@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, timezone, username, gitUsername, gitEmail, host, ... }:
+{ config, lib, inputs, pkgs, timezone, username, host, ... }:
 let
   myAliases = {
     ".." = "cd ..";

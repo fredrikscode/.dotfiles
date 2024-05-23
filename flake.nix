@@ -39,6 +39,8 @@
                 inherit username;
                 inherit inputs;
                 inherit host;
+                inherit gitUsername;
+                inherit gitEmail;
               };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
