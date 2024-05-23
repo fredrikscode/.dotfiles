@@ -91,7 +91,7 @@ in
       enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
-      history.size = 10000;
+      histSize = 10000;
       shellAliases = myAliases;
       oh-my-zsh = {
         enable = true;
