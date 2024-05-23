@@ -1,13 +1,32 @@
 { config, lib, inputs, pkgs, timezone, username, ... }:
-
+let
+  myAliases = {
+    ".." = "cd ..";
+    c = "clear -x";
+    ll = "ls -lah";
+    rebuild = "sudo nixos-rebuild switch --flake .#nixed";
+    manswitch = "home-manager switch --flake .#${userSettings.username}";
+    fup = "nix flake update /home/${userSettings.username}/.dotfiles";
+    s = "nix search nixpkgs";
+    v = "nvim";
+  };
+in
 {
   imports =
     [
       ./hardware.nix
-      ../../system/boot.nix
-      ../../system/gpu.nix
-      ../../system/network.nix
     ];
+
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+    };
+  };
 
   nix = {
     settings = {
@@ -32,6 +51,15 @@
     };
   };
 
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
+  networking.hostName = systemSettings.hostname;
+  networking.networkmanager.enable = true;
+
   environment = {
     variables = {
       XDG_CONFIG_HOME = "${builtins.getEnv "HOME"}/.dotfiles";
@@ -42,6 +70,10 @@
   };
 
   services = {
+    xserver = {
+      enable = true;
+      videoDrivers = [ "amdgpu" ];
+    };
     openssh = {
       enable = true;
     };
@@ -57,6 +89,21 @@
     };
     zsh = {
       enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+      history.size = 10000;
+      shellAliases = myAliases;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "git" ];
+        theme = "wezm";
+      };
+    };
+    bash = {
+      enable = true;
+      enableCompletion = true;
+      historyFileSize = 10000;
+      shellAliases = myAliases;
     };
   };
 
