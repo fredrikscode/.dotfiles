@@ -64,9 +64,6 @@ in
     variables = {
       XDG_CONFIG_HOME = "${builtins.getEnv "HOME"}/.dotfiles";
     };
-    sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-    };
   };
 
   services = {
