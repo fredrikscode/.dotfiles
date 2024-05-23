@@ -102,7 +102,6 @@ in
     bash = {
       enable = true;
       enableCompletion = true;
-      historyFileSize = 10000;
       shellAliases = myAliases;
     };
   };
