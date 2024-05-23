@@ -57,7 +57,7 @@ in
     driSupport32Bit = true;
   };
 
-  networking.hostName = hostname;
+  networking.hostName = host;
   networking.networkmanager.enable = true;
 
   environment = {
