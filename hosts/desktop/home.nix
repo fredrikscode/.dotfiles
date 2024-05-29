@@ -9,6 +9,10 @@
   home.homeDirectory = "/home/"+username;
   home.stateVersion = "23.11";
 
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     wezterm
     neovim
