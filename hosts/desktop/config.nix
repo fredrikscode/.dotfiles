@@ -70,6 +70,7 @@ in
     xserver = {
       enable = true;
       videoDrivers = [ "amdgpu" ];
+      displayManager.sddm.wayland.enable = true;
     };
     openssh = {
       enable = true;
