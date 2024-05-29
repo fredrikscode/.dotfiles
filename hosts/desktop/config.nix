@@ -78,7 +78,7 @@ in
 
   programs = {
     hyprland = {
-      enable = true;
+      enable = false;
     };
     # Enable laptop brightness keys
     light = {
