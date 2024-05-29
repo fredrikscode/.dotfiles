@@ -90,7 +90,7 @@ in
       syntaxHighlighting.enable = true;
       histSize = 10000;
       shellAliases = myAliases;
-      oh-my-zsh = {
+      ohMyZsh = {
         enable = true;
         plugins = [ "git" ];
         theme = "wezm";
